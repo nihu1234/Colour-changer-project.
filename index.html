@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Js</title>
+</head>
+<body>
+    <h1>Code with Niharika</h1>
+   
+    <button id="stop">stop</button>
+    <button id="start">start</button>
+    
+
+</body>
+<script>
+    const sayNiharika= (() => {
+        console.log("Niharika");
+    });
+    const changeText =(() => {
+        document.querySelector('h1').
+        innerHTML= "Code with Niharika is Awesome"
+
+    })
+
+        
+        
+   //setTimeout(sayNiharika, 2000)
+    const changeMe = setTimeout(changeText,2000)
+    document.querySelector('#stop').
+    addEventListener('click', () => {
+        clearTimeout(changeMe)
+        console.log("STOPPED")
+    })
+</script>
+</html>
